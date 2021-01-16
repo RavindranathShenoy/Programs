@@ -1,0 +1,24 @@
+/* To find the largest sub-array sum in a given array
+int arr[] = { 1, -2 , 3, 4, 5}
+ max_sum = 12 (3+4+5)
+ */
+ 
+ int kadane (int a[],int n)
+{
+    int max=0,tmax=0,i;
+    for(i=0;i<n;i++)
+    {
+        tmax=tmax+a[i];
+        if(tmax<0)
+        {
+          tmax=0;
+        }
+
+        if(max<tmax)
+        {
+          max=tmax;
+        }
+
+    }
+    return max;
+}
